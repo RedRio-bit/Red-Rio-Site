@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Red Rio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111;
+      font-family: 'Space Grotesk', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      font-size: 3vw;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      padding: 0 20px;
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5vw;
+      padding: 0 20px;
+      background: #f9f9f9;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 14px;
+      color: #888;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div>
+      <p>RED RIO<br><span style="font-size: 0.5em;">fotografia concettuale<br>oltre l'identità</span></p>
+    </div>
+  </div>
+
+  <div class="section fade">
+    <div>
+      <p>Qui inizia la costruzione.<br>Un luogo dove ogni immagine è una soglia.<br>Presto tutto prenderà forma.</p>
+    </div>
+  </div>
+
+  <footer>© Red Rio – 2025</footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const section = document.querySelector('.fade');
+      const scrollPos = window.scrollY + window.innerHeight;
+      if (scrollPos > section.offsetTop + 100) {
+        section.classList.add('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
